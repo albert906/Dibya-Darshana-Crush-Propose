@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Will You Marry Me</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #ff5fa2, #ff1493);
+    overflow: hidden;
+    padding-top: 50px;
+    transition: background 1s ease;
+}
+
+/* BIG NAME */
+.name {
+    font-size: 75px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 20px pink; }
+    to { text-shadow: 0 0 50px red; }
+}
+
+/* HEART BEAT TEXT */
+.heartbeat {
+    font-size: 36px;
+    color: hotpink;
+    margin-top: 20px;
+    animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* QUESTION */
+.question {
+    font-size: 34px;
+    margin-top: 40px;
+}
+
+/* RING */
+.ring {
+    font-size: 70px;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+/* BUTTONS */
+button {
+    font-size: 22px;
+    padding: 14px 40px;
+    margin: 25px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.yes {
+    background: white;
+    color: #ff1493;
+    box-shadow: 0 0 30px white;
+    animation: pulse 1.5s infinite;
+}
+
+.no {
+    background: #ff3366;
+    color: white;
+    box-shadow: 0 0 30px red;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+/* RESULT TEXT */
+.result {
+    font-size: 30px;
+    margin-top: 40px;
+    animation: glow 2s infinite alternate;
+}
+
+/* KISSING COUPLE */
+.couple {
+    font-size: 70px;
+    margin-top: 20px;
+}
+
+/* FLOATING HEARTS */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    to { transform: translateY(-120vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="name">DARSHANA</div>
+
+<div class="heartbeat">You Are My_Heart_Beat 💗</div>
+
+<div class="question">
+Will You Marry Me DARSHANA??
+</div>
+
+<div class="ring">💍</div>
+
+<br><br>
+
+<div id="buttons">
+    <button class="yes" onclick="yesClicked()">YES</button>
+    <button class="no" onclick="noClicked()">NO</button>
+</div>
+
+<div id="message" class="result"></div>
+
+<div class="couple">💑 💋</div>
+
+<script>
+let noCount = 0;
+
+function yesClicked() {
+    document.body.style.background =
+        "radial-gradient(circle, #ffccff, #ff1493)";
+    document.getElementById("buttons").style.display = "none";
+    document.getElementById("message").innerHTML =
+        "Thanks for choosing me for Lifetime ❤️<br>" +
+        "I will never leave you 💞<br>" +
+        "I Lovvveee Youuuu Sooo Muchhhh 😘<br><br>" +
+        "<b>We are Couples now and forever 💍</b>";
+}
+
+function noClicked() {
+    noCount++;
+    if (noCount % 2 === 1) {
+        document.getElementById("message").innerHTML =
+            "Mera Pyaar Sacha he Tumse 💖";
+    } else {
+        document.getElementById("message").innerHTML =
+            "I can’t leave without you 😢<br>Please maan jao na 🙏";
+    }
+}
+
+/* Hearts */
+function heart() {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.fontSize = Math.random() * 30 + 15 + "px";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 6000);
+}
+setInterval(heart, 200);
+</script>
+
+</body>
+</html>

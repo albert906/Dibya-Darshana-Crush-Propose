@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Think Again</title>
+
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #1a0000, #000);
+    font-family: "Times New Roman", serif;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    padding-top: 120px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: #ff8080;
+    animation: floatUp 10s linear infinite;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-120vh); opacity: 0; }
+}
+
+h1 {
+    font-size: 38px;
+    color: #ffb3b3;
+    animation: shake 1s infinite;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(1deg); }
+    50% { transform: rotate(-1deg); }
+    75% { transform: rotate(1deg); }
+    100% { transform: rotate(0); }
+}
+
+button {
+    font-size: 22px;
+    padding: 12px 40px;
+    margin: 30px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.yes { background: pink; box-shadow: 0 0 20px pink; }
+.no { background: red; box-shadow: 0 0 20px red; }
+
+button:hover { transform: scale(1.2); }
+</style>
+</head>
+
+<body>
+
+<h1>Ek baar soch lo naa phirse 💕</h1>
+
+<button class="yes" onclick="location.href='marry.html'">YES</button>
+<button class="no" onclick="location.href='Chooseparents.html'">NO</button>
+
+<script>
+function heart() {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.fontSize = Math.random() * 25 + 10 + "px";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 10000);
+}
+setInterval(heart, 400);
+</script>
+
+</body>
+</html>

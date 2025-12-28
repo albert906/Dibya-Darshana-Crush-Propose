@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Romantic Proposal</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+    background: linear-gradient(120deg, #000000, #2b0000);
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: red;
+    font-size: 20px;
+    animation: floatUp 8s linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px red; }
+    to { text-shadow: 0 0 30px pink; }
+}
+
+.welcome {
+    font-size: 32px;
+    margin-top: 40px;
+}
+
+.lines {
+    color: yellow;
+    font-size: 20px;
+    line-height: 1.8;
+    margin-top: 30px;
+}
+
+.question {
+    margin-top: 70px;
+    font-size: 36px;
+    color: hotpink;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}
+
+button {
+    font-size: 22px;
+    padding: 12px 40px;
+    margin: 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.yes {
+    background: pink;
+    box-shadow: 0 0 20px pink;
+}
+
+.no {
+    background: #ff4d4d;
+    box-shadow: 0 0 20px red;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+</style>
+</head>
+
+<body>
+
+<h1>A ROMANTIC PROPOSAL FROM : ALBERT JUSTIN MARANDYY</h1>
+
+<div class="welcome">Welcome to my Romantic World</div>
+
+<br><br>
+
+<div class="lines">
+• “Before I ask you the most important question of my life, I just want you to know that every dream of mine begins and ends with you.”<br>
+• “I don’t have a long speech—just a heart full of love and one honest question meant only for you.”<br>
+• “This moment holds all my courage, my love, and my forever… because it’s about you.”<br>
+• “I’ve rehearsed many words, but my heart says just one thing—this is our moment.”
+</div>
+
+<br><br><br><br>
+
+<div class="question">
+Dibya Darshana will you be Mine Forever?
+</div>
+
+<button class="yes" onclick="location.href='FirstTimeYes.html'">YES</button>
+<button class="no" onclick="location.href='firstTimeno.html'">NO</button>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+}
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>

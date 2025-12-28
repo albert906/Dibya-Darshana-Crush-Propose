@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>She Said Yes</title>
+
+<style>
+body {
+    margin: 0;
+    background: radial-gradient(circle, #ff66cc, #ff1493);
+    font-family: "Times New Roman", serif;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    padding-top: 60px;
+}
+
+/* FIRE NAME EFFECT */
+.fire-name {
+    font-size: 70px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    color: #fff;
+    text-transform: uppercase;
+    animation: fireGlow 1.5s infinite alternate;
+}
+
+@keyframes fireGlow {
+    0% {
+        text-shadow:
+        0 0 10px #ff3300,
+        0 0 20px #ff6600,
+        0 0 30px #ff0000,
+        0 0 40px #ff6600;
+    }
+    100% {
+        text-shadow:
+        0 0 20px #ffff00,
+        0 0 30px #ff9900,
+        0 0 50px #ff3300,
+        0 0 70px red;
+    }
+}
+
+/* HEART ANIMATION */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: white;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    to { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* MAIN TEXT */
+h1 {
+    font-size: 42px;
+    margin-top: 40px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 15px white; }
+    to { text-shadow: 0 0 40px red; }
+}
+
+/* QUESTION TEXT */
+.question {
+    font-size: 22px;
+    max-width: 900px;
+    margin: 30px auto;
+    line-height: 1.6;
+    color: #ffe6f2;
+}
+
+/* BUTTONS */
+button {
+    font-size: 20px;
+    padding: 14px 34px;
+    margin: 20px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.choose-you {
+    background: white;
+    color: #ff1493;
+    box-shadow: 0 0 30px white;
+}
+
+.choose-parents {
+    background: #ff3366;
+    color: white;
+    box-shadow: 0 0 30px red;
+}
+
+button:hover {
+    transform: scale(1.15);
+}
+</style>
+</head>
+
+<body>
+
+<!-- FIRE NAME -->
+<div class="fire-name">DIBYA DARSHANA</div>
+
+<h1>I knew it, you truly loved me ❤️</h1>
+
+<div class="question">
+No matter what happens in future between us,<br>
+will you still stand by my side even if our parents turn against our relationship?<br><br>
+Will you choose me or your parents?
+</div>
+
+<button class="choose-you" onclick="location.href='marry.html'">
+I will always choose you Forever ❤️
+</button>
+
+<button class="choose-parents" onclick="location.href='ChooseParents.html'">
+I will choose my Parents
+</button>
+
+<script>
+function heart() {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.fontSize = Math.random() * 30 + 15 + "px";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 6000);
+}
+setInterval(heart, 200);
+</script>
+
+</body>
+</html>
